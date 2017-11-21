@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/devider_grey" />
+
+    <RelativeLayout
+        android:id="@+id/rlSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_square"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_toLeftOf="@+id/imgSearch"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/padding_10"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textColorHint="#888888" />
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/spacing_micro"
+            android:src="@drawable/ic_search_black" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rlView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlSearchView"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="7">
+
+            <TextView
+                android:id="@+id/txtProjNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="PROJ #"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtProjName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="PROJECT NAME"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="ADDRESS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCompanyName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="COMPANY NAME"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtBank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="BANKS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtUnits"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="UNITS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtGCSuper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text=" G.C. SUPER"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtGCProjManager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="G.C. Proj Mgr"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="STATUS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+    </LinearLayout>
+
+    <com.schindler.schindler.tag.PullListView
+        android:id="@+id/lvProjectList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlView"
+        android:layout_marginTop="2dp"
+        android:animateLayoutChanges="true"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:fadeScrollbars="true"
+        android:smoothScrollbar="true" />
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#555555"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+</RelativeLayout>
